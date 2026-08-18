@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1480 1120" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace">
+
+<defs>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L8,3 z" fill="#374151"/>
+  </marker>
+  <marker id="arrowRed" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+  </marker>
+  <marker id="arrowGray" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L8,3 z" fill="#6B7280"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1480" height="1120" fill="#FFFFFF"/>
+<text x="740" y="34" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="middle">RV32I 5-Stage Pipelined Processor — Datapath</text>
+<text x="740" y="56" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">IF → ID → EX → MEM → WB   |   hazard_unit.v manages forwarding, stalls, and flushes</text>
+<rect x="1080" y="16" width="380" height="66" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+<line x1="1094" y1="36" x2="1134" y2="36" stroke="#374151" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="1144" y="40" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="normal" fill="#334155" text-anchor="start">datapath (data)</text>
+<line x1="1094" y1="58" x2="1134" y2="58" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="6,4" marker-end="url(#arrowRed)"/>
+<text x="1144" y="62" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="normal" fill="#334155" text-anchor="start">hazard unit control (stall / flush / forward)</text>
+<line x1="1094" y1="78" x2="1134" y2="78" stroke="#6B7280" stroke-width="2.4" stroke-dasharray="3,3" marker-end="url(#arrowGray)"/>
+<text x="1144" y="82" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="normal" fill="#334155" text-anchor="start">write-back / redirect feedback path</text>
+<path d="M 720 420 C 720 100, 160 100, 160 150" stroke="#6B7280" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrowGray)"/>
+<rect x="225.12" y="84" width="409.76" height="18.4" fill="#FFFFFF" opacity="0.92"/><text x="430" y="96" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">pc_target_ex -> PC mux  (on taken branch / jal / jalr)</text>
+<rect x="40" y="150" width="240" height="560" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="160.0" y="176" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#2563EB" text-anchor="middle">IF</text>
+<text x="160.0" y="194" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="normal" fill="#334155" text-anchor="middle">Instruction Fetch</text>
+<rect x="320" y="150" width="240" height="560" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="440.0" y="176" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#16A34A" text-anchor="middle">ID</text>
+<text x="440.0" y="194" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="normal" fill="#334155" text-anchor="middle">Instruction Decode / Register Read</text>
+<rect x="600" y="150" width="240" height="560" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="2.5"/>
+<text x="720.0" y="176" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#D97706" text-anchor="middle">EX</text>
+<text x="720.0" y="194" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="normal" fill="#334155" text-anchor="middle">Execute / ALU</text>
+<rect x="880" y="150" width="240" height="560" rx="10" fill="#FCE7F3" stroke="#DB2777" stroke-width="2.5"/>
+<text x="1000.0" y="176" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#DB2777" text-anchor="middle">MEM</text>
+<text x="1000.0" y="194" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="normal" fill="#334155" text-anchor="middle">Memory Access</text>
+<rect x="1160" y="150" width="240" height="560" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2.5"/>
+<text x="1280.0" y="176" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#7C3AED" text-anchor="middle">WB</text>
+<text x="1280.0" y="194" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="normal" fill="#334155" text-anchor="middle">Write Back</text>
+<rect x="280" y="160" width="40" height="540" rx="4" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="300" y="430.0" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90 300 430.0)">IF/ID</text>
+<rect x="560" y="160" width="40" height="540" rx="4" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="580" y="430.0" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90 580 430.0)">ID/EX</text>
+<rect x="840" y="160" width="40" height="540" rx="4" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="860" y="430.0" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90 860 430.0)">EX/MEM</text>
+<rect x="1120" y="160" width="40" height="540" rx="4" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="1140" y="430.0" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90 1140 430.0)">MEM/WB</text>
+<rect x="60" y="210" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+<text x="160" y="232" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">PC register</text>
+<text x="160" y="249" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">(top_pipeline.v)</text>
+<rect x="60" y="300" width="200" height="70" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+<text x="160" y="322" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Instruction Memory</text>
+<text x="160" y="339" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Ins_Mem.v</text>
+<rect x="60" y="400" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+<text x="160" y="422" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">PC + 4 adder</text>
+<line x1="160" y1="270" x2="160" y2="300" stroke="#374151" stroke-width="2.4" marker-end="url(#arrow)"/>
+<line x1="160" y1="370" x2="160" y2="400" stroke="#374151" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="340" y="210" width="200" height="80" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/>
+<text x="440" y="234" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Register File</text>
+<text x="440" y="251" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">reg_file.v</text>
+<text x="440" y="268" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">(write-first bypass)</text>
+<rect x="340" y="310" width="200" height="70" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/>
+<text x="440" y="332" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Control Unit</text>
+<text x="440" y="349" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">control_unit.v</text>
+<rect x="340" y="400" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/>
+<text x="440" y="422" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Immediate Extend</text>
+<text x="440" y="439" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Imm_extend.v</text>
+<rect x="620" y="210" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/>
+<text x="720" y="232" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Forward Mux A / B</text>
+<rect x="620" y="290" width="200" height="70" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/>
+<text x="720" y="312" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">ALU</text>
+<text x="720" y="329" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">alu.v</text>
+<rect x="620" y="380" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/>
+<text x="720" y="400" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Branch compare +</text>
+<text x="720" y="417" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">pc_target = pc_ex + imm</text>
+<line x1="720" y1="270" x2="720" y2="290" stroke="#374151" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="900" y="210" width="200" height="90" rx="6" fill="#FFFFFF" stroke="#DB2777" stroke-width="1.6"/>
+<text x="1000" y="234" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Data Memory</text>
+<text x="1000" y="251" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">data_mem.v</text>
+<text x="1000" y="268" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">byte / half / word,</text>
+<text x="1000" y="285" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">sign / zero-extend</text>
+<rect x="1180" y="210" width="200" height="70" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.6"/>
+<text x="1280" y="232" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">Result Mux</text>
+<text x="1280" y="249" font-family="Consolas, 'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">(ALU / MEM / PC+4)</text>
+<line x1="260" y1="245" x2="320" y2="245" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="540" y1="245" x2="600" y2="245" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="820" y1="245" x2="880" y2="245" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="1100" y1="245" x2="1160" y2="245" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="340" y="880" width="480" height="130" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5"/>
+<text x="580.0" y="906" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="bold" fill="#B91C1C" text-anchor="middle">Hazard Unit</text>
+<text x="580.0" y="930.0" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="normal" fill="#7F1D1D" text-anchor="middle">hazard_unit.v</text>
+<text x="580.0" y="945.5" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="normal" fill="#7F1D1D" text-anchor="middle">forward_AE / forward_BE   (EX-EX, MEM-EX, WB-EX)</text>
+<text x="580.0" y="961.0" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="normal" fill="#7F1D1D" text-anchor="middle">stallF / stallD              (load-use hazard)</text>
+<text x="580.0" y="976.5" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="normal" fill="#7F1D1D" text-anchor="middle">flushD / flushE              (taken branch / jump)</text>
+<path d="M 355 880 C 60 650, 60 750, 160 710" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowRed)"/>
+<path d="M 395 880 C 300 680, 300 750, 300 710" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowRed)"/>
+<path d="M 450 880 L 580 710" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowRed)"/>
+<path d="M 805 880 L 720 710" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowRed)"/>
+<rect x="64.85" y="759" width="110.3" height="17.4" fill="#FFFFFF" opacity="0.92"/><text x="120" y="770" font-family="Consolas, 'Courier New', monospace" font-size="11" font-weight="bold" fill="#B91C1C" text-anchor="middle">stallF / stallD</text>
+<rect x="230.54" y="714" width="48.92" height="17.4" fill="#FFFFFF" opacity="0.92"/><text x="255" y="725" font-family="Consolas, 'Courier New', monospace" font-size="11" font-weight="bold" fill="#B91C1C" text-anchor="middle">flushD</text>
+<rect x="480.54" y="829" width="48.92" height="17.4" fill="#FFFFFF" opacity="0.92"/><text x="505" y="840" font-family="Consolas, 'Courier New', monospace" font-size="11" font-weight="bold" fill="#B91C1C" text-anchor="middle">flushE</text>
+<rect x="707.57" y="829" width="164.85999999999999" height="17.4" fill="#FFFFFF" opacity="0.92"/><text x="790" y="840" font-family="Consolas, 'Courier New', monospace" font-size="11" font-weight="bold" fill="#B91C1C" text-anchor="middle">forward_AE / forward_BE</text>
+<path d="M 600 710 L 510 880" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowRed)"/>
+<rect x="605" y="779.5" width="170.75" height="16.9" fill="#FFFFFF" opacity="0.92"/><text x="605" y="790" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="bold" fill="#B91C1C" text-anchor="start">rs1_ex, rs2_ex, mem_rd_ex</text>
+<path d="M 900 710 L 750 880" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowRed)"/>
+<rect x="905" y="809.5" width="125.17999999999999" height="16.9" fill="#FFFFFF" opacity="0.92"/><text x="905" y="820" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="bold" fill="#B91C1C" text-anchor="start">rd_mem, reg_wr_mem</text>
+<path d="M 1180 710 C 1180 840, 890 840, 820 905" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowRed)"/>
+<rect x="1185" y="884.5" width="112.16" height="16.9" fill="#FFFFFF" opacity="0.92"/><text x="1185" y="895" font-family="Consolas, 'Courier New', monospace" font-size="10.5" font-weight="bold" fill="#B91C1C" text-anchor="start">rd_wb, reg_wr_wb</text>
+<path d="M 1280 280 C 1280 1090, 440 1090, 440 290" stroke="#6B7280" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrowGray)"/>
+<rect x="666.28" y="1094" width="387.44" height="18.4" fill="#FFFFFF" opacity="0.92"/><text x="860" y="1106" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">result_wb -> RegFile write port  (rd_wb, reg_wr_wb)</text>
+</svg>

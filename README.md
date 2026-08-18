@@ -25,10 +25,6 @@ IF  →  ID  →  EX  →  MEM  →  WB
 | **Verification** | Self-checking scoreboard testbench — **38 / 38 register checks, 6 / 6 memory checks passing** |
 | **Waveform** | GTKWave `.vcd` dump included |
 
-> This design went through a real debug pass — see [`BUGS_FOUND.md`](BUGS_FOUND.md) for
-> five functional RTL bugs that were found by actually simulating the design (not just
-> reading it) and fixed, plus one bug in the testbench itself that was silently skipping
-> 8 of its own checks until it was caught.
 
 ---
 
@@ -168,7 +164,3 @@ peeks.
 - No branch predictor — every branch/jump costs a fixed 2-cycle penalty
 - `Ins_Mem.v` is a fixed ROM for verification, not a program loader
 
-## License
-
-Add a license of your choice (MIT is a common default for course/portfolio projects
-like this).
